@@ -24,6 +24,13 @@ app.get('/goodbye', (req, res) => {
     res.json({ message: 'Goodbye! See you next time.' });
 });
 
+// Route 5: Multiply 2 numbers
+app.get('/multiply/:a/:b', (req, res) => {
+    const a = parseInt(req.params.a);
+    const b = parseInt(req.params.b);
+    res.json({ result: a * b });
+});
+
 // Start the server only if this file is run directly (not during tests)
 if (require.main === module) {
     const PORT = process.env.PORT || 3000;
